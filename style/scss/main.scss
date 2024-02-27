@@ -1,0 +1,189 @@
+$font-size: clamp(14px, 1.4vw, 20px);
+
+$main: #df8722;
+$main-disable: #a7763d;
+$main-active: #cd8839;
+$main-border: #efa857;
+$main-hover: #efbb80;
+
+$second: #1b688d;
+$second-disable: #2a556a;
+$second-active: #4b89a9;
+$second-border: #4e9fc6;
+$second-hover: #6ea9c6;
+
+$white: #ffffff;
+$light-grey-1: #efefef;
+$light-grey-2: #dedede;
+$light-grey-3: #c5c5c5;
+$grey-1: #afafaf;
+$grey-2: #939393;
+$grey-3: #7b7b7b;
+$dark-grey-1: #5b5b5b;
+$dark-grey-2: #3e3e3e;
+$dark-grey-3: #2f2f2f;
+$black: #222222;
+
+$cursor: url(../../images/icons/cursor-dark/pointer.png);
+$cursor-x: url(../../images/icons/cursor-dark/pointer-x.png);
+$cursor-code: url(../../images/icons/cursor-dark/pointer-code.png);
+$cursor-plus: url(../../images/icons/cursor-dark/pointer-plus.png);
+$cursor-minus: url(../../images/icons/cursor-dark/pointer-minus.png);
+$cursor-check: url(../../images/icons/cursor-dark/pointer-check.png);
+$cursor-cancel: url(../../images/icons/cursor-dark/pointer-cancel.png);
+$cursor-exclamation: url(../../images/icons/cursor-dark/pointer-exclamation.png);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: $font-size;
+    color: $black;
+    background-color: $light-grey-2;
+}
+
+body {
+    cursor: $cursor, auto;
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & p {
+        text-align: center;
+    }
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+.footer {
+    text-align: center;
+}
+
+.script {
+    display: flex;
+    column-gap: 1rem;
+    background-color: $white;
+
+    border-radius: 2rem;
+    margin: 1rem;
+    padding: 1rem;
+
+    & section {
+        width: 100%;
+        border-radius: 1rem;
+        padding: 1rem;
+    }
+
+    &__code {
+        color: $white;
+        background-color: $dark-grey-3;
+    }
+
+    &__configure {
+        background-color: $light-grey-3;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+}
+
+.config {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.6rem;
+
+    &__header {
+        font-size: 1rem;
+    }
+
+    &__btn-group {
+        display: flex;
+        gap: 0.6rem 0.8rem;
+    }
+
+    &__category {
+        display: grid;
+        grid-template-columns: 1fr 1fr auto;
+        column-gap: 0.2rem;
+
+        &-item {
+            padding: 0.6rem;
+
+            border: 2px solid $grey-3;
+        }
+    }
+}
+
+.checkbox {
+    display: flex;
+    cursor: $cursor-plus, pointer;
+    height: fit-content;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    & > input,
+    & > label {
+        cursor: $cursor-plus, pointer;
+    }
+
+    & > label {
+        padding-left: 0.2rem;
+    }
+
+    & > input:checked,
+    & > input:checked ~ label {
+        cursor: $cursor-minus, pointer;
+    }
+
+    & > input:disabled,
+    & > input:disabled ~ label {
+        cursor: $cursor-cancel, not-allowed;
+        color: $grey-3;
+    }
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: 2px solid $main-border;
+    border-radius: 1rem;
+
+    &:hover {
+        cursor: $cursor-plus, pointer;
+        background-color: $main-hover;
+    }
+
+    &:active {
+        background-color: $main-active;
+    }
+
+    &:disabled {
+        cursor: $cursor-cancel, pointer;
+        background-color: $main-disable;
+        border: 2px solid $main-disable;
+    }
+
+    &_active {
+        background-color: $main;
+        border: 2px solid $main;
+
+        &:hover {
+            cursor: $cursor-minus, pointer;
+            background-color: $main;
+        }
+    }
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BCI</title>
+
+        <link rel="stylesheet" href="style/css/main.css" />
+    </head>
+    <body>
+        <header class="header">
+            <h1>BCI</h1>
+            <p>Формирование скрипта по установке ПО для операционную систему Linux</p>
+        </header>
+
+        <main class="main script">
+            <section class="script__code">
+                <pre><code></code></pre>
+            </section>
+            <section class="script__configure">
+                <article class="script__config-linux-dist config">
+                    <h2 class="config__header">Выберите дистрибутив Linux</h2>
+                    <div class="config__btn-group">
+                        <button class="btn">Debian</button>
+                        <button class="btn">Ubuntu</button>
+                        <button class="btn" disabled>Centos</button>
+                        <button class="btn" disabled>Redhat</button>
+                    </div>
+                </article>
+                <article class="script__config-program config">
+                    <h2 class="config__header">Выберите требуемые функции:</h2>
+                    <div class="config__category">
+                        <fieldset class="config__category-item">
+                            <legend>Программы:</legend>
+                            <div class="checkbox">
+                                <input type="checkbox" name="code" id="code" />
+                                <label for="code">VS Code</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" disabled name="pycharm" id="pycharm" />
+                                <label for="pycharm">Pycharm</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" disabled name="docker" id="docker" />
+                                <label for="docker">Docker</label>
+                            </div>
+                            <div class="checkbox">
+                                <input
+                                    type="checkbox"
+                                    disabled
+                                    name="libreoffice"
+                                    id="libreoffice"
+                                />
+                                <label for="libreoffice">Libreoffice</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" disabled name="vim" id="vim" />
+                                <label for="vim">Vim</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" disabled name="viewnior" id="viewnior" />
+                                <label for="viewnior">Viewnior</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" disabled name="vlc" id="vlc" />
+                                <label for="vlc">VLC media player</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" disabled name="chrome" id="chrome" />
+                                <label for="chrome">Google Chrome</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" disabled name="Firefox" id="Firefox" />
+                                <label for="Firefox">Firefox</label>
+                            </div>
+                        </fieldset>
+                        <fieldset class="config__category-item">
+                            <legend>Утилиты:</legend>
+                            <div class="checkbox">
+                                <input type="checkbox" disabled name="git" id="git" />
+                                <label for="git">Git</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" disabled name="mc" id="mc" />
+                                <label for="mc">Midnight Commander</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" disabled name="tree" id="tree" />
+                                <label for="tree">Tree</label>
+                            </div>
+                        </fieldset>
+                        <fieldset class="config__category-item">
+                            <legend>ЯП:</legend>
+                            <div class="checkbox">
+                                <input type="checkbox" disabled name="python" id="python" />
+                                <label for="python">Python</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" disabled name="golang" id="golang" />
+                                <label for="golang">Golang</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" disabled name="rust" id="rust" />
+                                <label for="rust">Rust</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" disabled name="scss" id="scss" />
+                                <label for="scss">Scss</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <footer class="footer">&copy; neyakki 2024</footer>
+
+        <script src="scripts/main.js"></script>
+    </body>
+</html>
