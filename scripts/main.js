@@ -1,11 +1,13 @@
+import { template_code } from "./code.js";
+
 const buttons = document.querySelectorAll(".btn");
 const checkboxes = document.querySelectorAll(".checkbox");
 const code = document.querySelector("code");
 let current_btn_active = null;
 
-const linux_cmd = {
-    Debian: "$ sudo apt update\n$ sudo apt upgrade",
-    Ubuntu: "$ sudo apt update\n$ sudo apt upgrade",
+let cmd = {
+    linux: null,
+    code: null,
 };
 
 buttons.forEach((btn) => {
@@ -16,11 +18,14 @@ buttons.forEach((btn) => {
 
         if (current_btn_active === event.target) {
             current_btn_active = null;
-            code.innerHTML = "";
+            cmd.linux = null;
+            code.innerHTML = template_code(cmd);
             return;
         }
 
-        code.innerHTML = linux_cmd[event.target.textContent];
+        cmd.linux = event.target.textContent;
+
+        code.innerHTML = template_code(cmd);
 
         current_btn_active = event.target;
         btn.classList.add("btn_active");
@@ -28,7 +33,17 @@ buttons.forEach((btn) => {
 });
 
 checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener("click", (event) => {
-        checkbox.classList.add("checkbox_checked");
+    // В данном случае надо использовать change, т.к. click по label вызывает клик по чекбоксу
+    checkbox.addEventListener("change", (event) => {
+        if (event.target.checked === false) {
+            cmd.code = null;
+
+            code.innerHTML = template_code(cmd);
+            return;
+        }
+
+        cmd.code = event.target.name;
+
+        code.innerHTML = template_code(cmd);
     });
 });
